@@ -101,17 +101,19 @@ AULA.md                 # script do instrutor
 
 ## Estudar com AI neste repo
 
-1. Abra o chat do Cursor neste projeto.
-2. Use a skill **teach-as-you-build** (`.cursor/skills/teach-as-you-build/`).
-3. Peça uma feature do roadmap e peça **explicação + diagrama mermaid + complexidade** antes do código.
-4. Implemente, rode `pytest`, commit pequeno, atualize `DECISIONS.md` se mudou um trade-off.
+O arquivo [`AGENTS.md`](AGENTS.md) manda o agente **ensinar sem codear** até você pedir. Para implementação guiada, use a skill **teach-as-you-build**.
 
-Prompt seed:
+Prompt seed (só estudar):
 
 ```text
-Usando teach-as-you-build: quero implementar LPUSH/LPOP neste MiniRedis.
-Antes de codear, explique o modelo mental, desenhe o fluxo com mermaid,
-compare com Redis real (complexidade), e só então proponha o diff mínimo.
+Não implemente. Explique KEYS neste repo vs SCAN no Redis real.
+Mermaid do fluxo + tabela de complexidade. Termine com 1 pergunta pra eu pensar.
+```
+
+Prompt seed (quando quiser código):
+
+```text
+Agora pode implementar LPUSH/LPOP. Patch mínimo + teste no estilo test_commands.py.
 ```
 
 ---
